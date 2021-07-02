@@ -1,24 +1,26 @@
 
-
-<html><body ><h1>CALCULATOR</h1>
-    <form method= "POST" enctype="multipart/form-data" action="/form" >
+<div style="text-align: center;"><h1>CALCULATOR</h1>
+    <form  method= "POST" enctype="multipart/form-data" action="/form" >
     <label>SELECT OPERATOR:</label>
-    <input type="radio" id="Addition" name="Operator" [(ngModel)]="add">
+    <input type="radio" id="Addition" name="Operator"  [(ngModel)]="Operator" value="+">
     <label for="Addition">Addition</label>
-    <input type="radio" id="Substraction" name="Operator"  [(ngModel)]="sub">
+    <input type="radio" id="Substraction" name="Operator"  [(ngModel)]="Operator"value="-">
    <label for="Substraction">Substraction</label>
-  <input type="radio" id="Multiplication" name="Operator"  [(ngModel)]="mul">
+  <input type="radio" id="Multiplication" name="Operator"  [(ngModel)]="Operator"value="*">
   <label for="Multiplication">Multiplication</label>
-  <input  type="radio" id="Division"name="Operator"  [(ngModel)]="div" >
+  <input  type="radio" id="Division"name="Operator"  [(ngModel)]="Operator" value="/">
   <label  for="Division">Division</label> <br><br>
   <label for="first">Enter First Number:</label><br>
-  <input type="number"  step="1" id="first"name="val1" [(ngModel)]="val2" ><br><br>
+  <input type="number"  step="1" id="first"name="val1" [(ngModel)]="val1" ><br><br>
   <label for="Second">Enter Second Number:</label><br>
   <input type="number" step="1" id="second"name="val2" [(ngModel)]="val2"><br><br>
-  <input type="submit" value="Submit" onclick="getresult()">
-  <input  type="reset">
+  <button (click)="sendValues()">SUBMIT</button>
+
+  <button type="reset" value="Reset" style ="margin-left:10px">RESET</button>
            </form>
-    <div>
-        RESULT:
+    <div style="margin-top:10px">
+       <b >RESULT: {{op}} {{res }} </b>
     </div>
-           </body>   </html>
+</div> 
+     
+<router-outlet></router-outlet>

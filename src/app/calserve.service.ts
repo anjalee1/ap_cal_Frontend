@@ -12,12 +12,11 @@ export class CalserveService {
   constructor(private http: HttpClient) { }
 
   sendValues(values:Values): Observable<any> {
-    return this.http.post('http://localhost:8080',values);
+    
+    return this.http.post<Result>('http://localhost:8080',values);
   }
 
-  getResult(){
-    return this.http.get<Result>('http://localhost:8080');
-  }
+  
 
 }
 

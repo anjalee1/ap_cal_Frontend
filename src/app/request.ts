@@ -1,6 +1,6 @@
 export interface Values {
     operator: string;
-    val1: Number;
-    val2:  Number;
+    number1: number;
+    number2:  number;
     
 }
